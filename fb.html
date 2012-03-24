@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Notification</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src= "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	
+	<link rel="stylesheet" href="css/notification.css">
+
+</head>
+
+<body>
+	<div class="notification-panel">
+		<div class="message">
+			<img src="images/fb.png" align="left">
+			<p style="line-height: 50px"><strong>Chuck Norris poked you</strong></p>
+		</div>
+		<div class="slide-end"></div>
+	</div>
+	
+	<script>
+	$(document).ready(function(){
+		$('.message').draggable({
+			axis: 'x',
+			handle: 'img',
+			opacity: 0.5,
+			revert: 'invalid',
+		});
+		$('.slide-end').droppable({
+			tolerance: 'touch',
+			drop: function(e, ui) {
+				window.close();
+			}
+		})
+	})
+	</script>
+</body>
+</html>
