@@ -8,7 +8,6 @@ Recent Chrome browser
 
 # Demo URL
 
-<<<<<<< HEAD
 http://girliemac.github.com/html5-notifications-webOS-style
 
 # Known Problems
@@ -16,6 +15,3 @@ http://girliemac.github.com/html5-notifications-webOS-style
 Once you "Deny" at the permission setting, this URL is blocked by Chrome.
 You may unblocked it on Notification Exceptions form the preference window at:
 chrome://chrome/settings/contentExceptions#notifications 
-=======
-http://girliemac.github.com/html5-notifications-webOS-style
->>>>>>> ea1233ea79d98f2201221a66c551fe94eb53b8a1
