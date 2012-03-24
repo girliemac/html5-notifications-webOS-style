@@ -12,13 +12,9 @@ body {
 header {
 	text-align: center;
 	margin-bottom: 2em;
-}
-h1 {
-	margin: 0 0 1em 0;
-	padding: .4em;
-	font-weight: normal;
+	margin: 0 0 1.5em 0;
+	padding: .5rem;
 	text-shadow: 0px 2px 2px #fff;
-	font-size: 1.5em;
 	background: #dcdcdc; 
 	background: -moz-linear-gradient(top, #efefef, #cacaca);
 	background: -webkit-linear-gradient(top, #efefef, #cacaca);
@@ -26,7 +22,16 @@ h1 {
 	border-bottom: 1px solid #aaa;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
 }
-header #intro {	
+h1 {
+	margin: 0;
+	display: inline-block;
+	font-size: 1.5em;
+	line-height: 48px;
+	font-weight: normal;
+	background: url(../images/chrome.png) left top no-repeat;
+	padding-left: 55px;
+}
+#intro {	
 	width: 600px;
 	margin: 0 auto 2em;
 	text-align: left;
