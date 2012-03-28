@@ -14,6 +14,12 @@ body {
 	position: relative;
 	max-width: 300px;
 	overflow: hidden;
+	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+}
+.notification-panel ::selection {
+	color: transparent;
 }
 .message, .slide-end {
 	display: inline-block;
