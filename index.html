@@ -15,6 +15,8 @@
 	<header>
 		<h1>(webOS-esque) HTML5 Web Notifications</h1>
 	</header>
+	
+	<section class="main">
 		
 	<div id="intro">
 		<p>What is the Web Notifications API? -Read the <a href="http://www.w3.org/TR/notifications/" target='_blank'>spec</a> by W3C. </p>
@@ -25,7 +27,7 @@
 	</div>
 	
 	
-	<section id="permissionPref">
+	<section class="preference">
 		<h2>Browser Setting</h2>
 		<div>
 			<div class="caption">Enable Notifications *</div>
@@ -37,7 +39,7 @@
 			</label>
 		</div>
 	</section>	
-	<section id="apps">
+	<section class="preference">
 		<div>
 			<div class="caption">Email</div>
 			<label for="email">
@@ -71,6 +73,8 @@
 
 	
 	<input type="button" id="showNotifications" value="Show Notifications">
+	
+	</section>
 	
 	<footer>
 	<p>* Actual permission setting is stored in browser. If you "deny" the permission in the first time, and want to enable it, you need to change your configuration in the browser's Preference setting.

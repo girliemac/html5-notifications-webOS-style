@@ -15,12 +15,7 @@
 	if (typeof Notification === 'function') { 
 		checkPermission();
 	} else {
-		permToggle.checked = false;
-		emailToggle.setAttribute('disabled', 'disabled');
-		calendarToggle.setAttribute('disabled', 'disabled');
-		fbToggle.setAttribute('disabled', 'disabled');
-		showNotificationsButton.setAttribute('disabled', 'disabled');
-		
+		disableAllToggles();
 		alert('Your browser does not support Web Notifications API.');
 		return;
 	}
@@ -34,6 +29,18 @@
 		showNotifications();
 	});
 	
+	function disableAllToggles(){
+		permToggle.checked = false;
+		emailToggle.checked = false;
+		calendarToggle.checked = false;
+		fbToggle.checked = false;
+		
+		permToggle.setAttribute('disabled', 'disabled');
+		emailToggle.setAttribute('disabled', 'disabled');
+		calendarToggle.setAttribute('disabled', 'disabled');
+		fbToggle.setAttribute('disabled', 'disabled');
+		showNotificationsButton.setAttribute('disabled', 'disabled');
+	}
 	
 	function checkPermission() {
 		if(permToggle.checked === false) {
@@ -47,8 +54,7 @@
 			if (Notification.permission === 'granted') {
 				showNotificationsButton.removeAttribute('disabled');
 			} else {
-				permToggle.checked = false;
-				showNotificationsButton.setAttribute('disabled', 'disabled');
+				disableAllToggles();
 			}
 		});
 	}
