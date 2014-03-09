@@ -12,7 +12,7 @@
 	//var query = $('input').val();
 	
 	// Notification feature detection
-	if (Notification) { 
+	if (typeof Notification === 'function') { 
 		checkPermission();
 	} else {
 		permToggle.checked = false;
