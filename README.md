@@ -1,14 +1,15 @@
-![screenshot](images/screenshot.png)]
+![screenshot](images/screenshot.png)
 
 # Web Notifications Demo v2
 
-This is a demo of the Web Notifications API, in webOS UI style.
+W3C Web Notifications API demo in webOS UI style.
 
-The original demo had the webOS style notification, which allows a user to swipe to close the window. However, this v2 demo no longer supports the swipable notifications because the simplified new Web Notifications spcification only allows text and icon, and external HTML files are no longer permitted.
+In the original demo, I implemented the notifications with webOS style, which allowed a user to swipe to close the window. However, this v2 demo no longer supports the swipable notifications because the simplified new Web Notifications spcification only allows text and icon, and external HTML files are no longer permitted.
 
-## Supported browsers
+## Supported Browsers
 
-Firefox 22+ or Chrome 32+
+- Firefox 22+
+- Chrome 32+
 
 ## Demo
 
