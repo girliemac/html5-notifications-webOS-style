@@ -8,8 +8,8 @@ In the original demo, I implemented the notifications with webOS style, which al
 
 ## Supported Browsers
 
-- Firefox 22+
-- Chrome 32+
+- Firefox 22+ (both desktop and mobile)
+- Chrome 32+ (Desktop only)
 
 ## Demo
 
@@ -24,4 +24,6 @@ For detailed changelog, check [Releases](https://github.com/girliemac/html5-noti
 
 ## Known Problems
 
-- On Chrome 33, `close()` method does not seem to work. Notification windows fails to close automatically. 
+- Chrome for Android does not support the feature
+- Firefox on Android does support, however, only one line (the last line) is displayed on the native notification bar on top. No extra UI or window from browser.
+- On Chrome (tested on 33), `close()` method does not seem to work. Notification windows fails to close automatically. 
