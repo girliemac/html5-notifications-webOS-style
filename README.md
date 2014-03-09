@@ -20,7 +20,7 @@ In the original demo, I implemented the notifications with webOS style, which al
 - v.2 (March 2014) - using the [new Web Notification API specs](http://www.w3.org/TR/notifications)
 - v.1 (March 2012) - using the old Web Notification API specs, which is now deprecated.
 
-For detailed changelog, check [Releases](https://github.com/webcomponents/element-boilerplate/releases).
+For detailed changelog, check [Releases](https://github.com/girliemac/html5-notifications-webOS-style/releases).
 
 ## Known Problems
 
