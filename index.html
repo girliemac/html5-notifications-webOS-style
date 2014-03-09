@@ -8,14 +8,7 @@
 	<meta name="description" content="webOS-Style HTML5 Notifications">
 	<meta name="author" content="Tomomi Imura  @girlie_mac">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="js/notification.js"></script>
-	
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="prefetch" href="email.html" />
-	<link rel="prefetch" href="calendar.html" />
-	<link rel="prefetch" href="fb.html" />
 </head>
 
 <body>
@@ -24,59 +17,75 @@
 	</header>
 		
 	<div id="intro">
-		<p>What is the HTML5 Web Notifications API? -Read the <a href="http://www.w3.org/TR/notifications/" target='_blank'>draft spec</a> by W3C. Currently, only supported by the latest Chrome browser.</p>
-		<p>What I did to make it webOS-esque? -You can swipe the notification bars to the right to dismiss.</p>
+		<p>What is the Web Notifications API? -Read the <a href="http://www.w3.org/TR/notifications/" target='_blank'>spec</a> by W3C. </p>
+		
+		<p><strong>UPDATED</strong> (March 2014): I needed to rewrite this demo using the new Web Notification API, since the spec has been modified since I initially wrote this demo 2 years ago. The <strong>new API</strong> only allows text and icon, and using HTML is now deprecated. So my demo <strong>no longer has the webOS style swaipable notifications</strong>, as I created originally.</p>
+		
+		<p>Supported browsers:  Firefox 22+ and Chrome 22+ (<code>close()</code> fails)</p>
 	</div>
 	
 	
 	<section id="permissionPref">
 		<h2>Browser Setting</h2>
 		<div>
-			<div class="caption">Enable Notifications</div>
-			<div class="toggle-button">
-				<input id="permission" type="checkbox" /><label for="permission"></label>
-			</div>
+			<div class="caption">Enable Notifications *</div>
+			<label for="permission">
+				<input id="permission" type="checkbox">
+				<div class="toggle-button">
+					<div class="switch"></div>
+				</div>
+			</label>
 		</div>
 	</section>	
 	<section id="apps">
 		<div>
 			<div class="caption">Email</div>
-			<div class="toggle-button">
-				<input id="email" type="checkbox" checked /><label for="email"></label>
-			</div>
+			<label for="email">
+				<input id="email" type="checkbox" checked>
+				<div class="toggle-button">
+					<div class="switch"></div>
+				</div>
+			</label>
 		</div>
 		
 		<div>
 			<div class="caption">Calendar</div>
-			<div class="toggle-button">
-				<input id="calendar" type="checkbox" /><label for="calendar"></label>
-			</div>
+			<label for="calendar">
+				<input id="calendar" type="checkbox">
+				<div class="toggle-button">
+					<div class="switch"></div>
+				</div>
+			</label>
 		</div>
 		
 		<div>
 			<div class="caption">Facebook</div>
-			<div class="toggle-button">
-				<input id="fb" type="checkbox" /><label for="fb"></label>
-			</div>
+			<label for="fb">
+				<input id="fb" type="checkbox">
+				<div class="toggle-button">
+					<div class="switch"></div>
+				</div>
+			</label>
 		</div>
 	</section>
 
 	
-	<input type="button" id="showNotifications" value="Show Notifications"/>
-	
+	<input type="button" id="showNotifications" value="Show Notifications">
 	
 	<footer>
-		<div id="twitter">
-		<a href="https://twitter.com/share" class="twitter-share-button" data-via="girlie_mac" data-hashtags="html5">Tweet</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		</div>
+	<p>* Actual permission setting is stored in browser. If you "deny" the permission in the first time, and want to enable it, you need to change your configuration in the browser's Preference setting.
+	</p>
+	<p>
+		<strong>Chrome</strong> - chrome://settings/contentExceptions#notifications
+		<br>
+		<strong>Firefox</strong> - about:permissions
+	</p>
+
+	<!-- Github ribbon -->
 		
-		Tomomi Imura<br/>
-		Twitter: <a href="http://twitter.com/girlie_mac" target="_blank">@girlie_mac</a><br/>
-		Blog: <a href="http://girliemac.com" target="_blank">girliemac.com</a><br/>
-	</footer>
+	<a href="https://github.com/girliemac/html5-notifications-webOS-style"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 	
-	<!-- Github button -->
-	<a href="https://github.com/girliemac/html5-notifications-webOS-style"><img class="github-banner" style="position: absolute; top:0; right:0; border:0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
+	<script src="js/notification.js"></script>
+	
 </body>
 </html>

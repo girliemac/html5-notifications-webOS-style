@@ -1,90 +1,84 @@
-$(document).ready(function() {
+(function() {
 	
-	var permToggle = $('#permission'),
-		emailToggle = $('#email'),
-		calendarToggle = $('#calendar'),
-		fbToggle = $('#fb'),
-		showNotificationsButton = $('#showNotifications');
+	var permToggle = document.getElementById('permission'),
+		emailToggle = document.getElementById('email'),
+		calendarToggle = document.getElementById('calendar'),
+		fbToggle = document.getElementById('fb');
+		
+	var showNotificationsButton = document.getElementById('showNotifications');
 	
 	var allowNotifications = false;
 	
-	var query = $('input').val();
+	//var query = $('input').val();
 	
-	// Check if notifications are supported (Currently only supported by Chrome)
-	if (window.webkitNotifications) {
+	// Notification feature detection
+	if (Notification) { 
 		checkPermission();
-		
 	} else {
-		permToggle.prop('checked', false);
-		emailToggle.attr('disabled', 'disabled');
-		calendarToggle.attr('disabled', 'disabled');
-		fbToggle.attr('disabled', 'disabled');
-		showNotificationsButton.attr('disabled', 'disabled');
+		permToggle.checked = false;
+		emailToggle.setAttribute('disabled', 'disabled');
+		calendarToggle.setAttribute('disabled', 'disabled');
+		fbToggle.setAttribute('disabled', 'disabled');
+		showNotificationsButton.setAttribute('disabled', 'disabled');
 		
-		alert('Your browser does not support HTML5 notifications API.')
+		alert('Your browser does not support Web Notifications API.');
 		return;
 	}
 
-	
-	permToggle.change(function(e) {
-		console.log('permission changeing');
-		window.webkitNotifications.requestPermission(checkPermission);
+	permToggle.addEventListener('change', function(e) {
+		checkPermission();
 	});
 	
-	emailToggle.change(function(e) {
-		console.log('changed');
-	});
 	
-	$('#showNotifications').click(function(e) {
-		showNotifications(query);
+	showNotificationsButton.addEventListener('click', function(e) {
+		showNotifications();
 	});
 	
 	
 	function checkPermission() {
-		console.log(window.webkitNotifications.checkPermission());
-		if (window.webkitNotifications.checkPermission() == 0) { // Allowed
-			permToggle.prop('checked', true);
-			showNotificationsButton.removeAttr('disabled');
-		} else {
-			permToggle.prop('checked', false);
-			showNotificationsButton.attr('disabled', 'disabled');
-		}
+		if(permToggle.checked === false) {
+			showNotificationsButton.setAttribute('disabled', 'disabled');
+			return;
+		} 
+		Notification.requestPermission(function (status) {
+			if (Notification.permission !== status) {
+				Notification.permission = status;
+			}
+			if (Notification.permission === 'granted') {
+				showNotificationsButton.removeAttribute('disabled');
+			} else {
+				permToggle.checked = false;
+				showNotificationsButton.setAttribute('disabled', 'disabled');
+			}
+		});
 	}
-
 	
-	function showNotifications(q) {
-		var emailNotification = $('#email').prop('checked'),
-			calendarNotification = $('#calendar').prop('checked'),
-			fbNotification = $('#fb').prop('checked');
-		var notification, 
-			notification2,
-			notification3;
+	function showNotifications() {
 			
 		var ms = 15000; // close notification after 15 sec
 		
-		if(emailNotification) {
-			notification = window.webkitNotifications.createHTMLNotification('email.html');
-			notification.ondisplay = function(event) {
-	            setTimeout(function() {event.currentTarget.cancel();}, ms);
-			}
-			notification.show();
+		if(emailToggle.checked) {
+			var en = new Notification('Confirm Your Payment of $500,000', { 
+				body: 'From: Nigerian Prince',
+				icon: 'images/email.png' 
+			});
+			en.onshow = function() { setTimeout(en.close, ms) }
 		}
-		if(calendarNotification) {
-			notification2 = window.webkitNotifications.createHTMLNotification('calendar.html');
-			notification2.ondisplay = function(event) {
-	            setTimeout(function() {event.currentTarget.cancel();}, ms);
-			}
-			notification2.show();
+		if(calendarToggle.checked) {
+			var cn = new Notification('Shaolin Kung-Fu Class', { 
+				body: 'Sunday, March 23 5:30 PM',
+				icon: 'images/calendar.png' 
+			});
+			cn.onshow = function() { setTimeout(cn.close, ms) }
 		}
-		if(fbNotification) {
-			notification3 = window.webkitNotifications.createHTMLNotification('fb.html');
-			notification3.ondisplay = function(event) {
-	            setTimeout(function() {event.currentTarget.cancel();}, ms);
-			}
-			notification3.show();
+		if(fbToggle.checked) {
+			var fn = new Notification('Chuck Norris poked you', { 
+				icon: 'images/fb.png' }
+			);
+			fn.onshow = function() { setTimeout(fn.close, ms) }
 		}
 	}
-});
+})();
 
 
 
