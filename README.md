@@ -27,3 +27,16 @@ For detailed changelog, check [Releases](https://github.com/girliemac/html5-noti
 - Chrome for Android does not support the feature
 - Firefox on Android does support, however, only one line (the last line) is displayed on the native notification bar on top. No extra UI or window from browser.
 - On Chrome (tested on 33), `close()` method does not seem to work. Notification windows fails to close automatically. 
+
+
+
+### Firefox on Android
+
+Notifications appear in the native notification bar, one at a time, instead of popup windows from browser. 
+
+The problem is that if a notificatin contains more than one lines one messages (when both `title` and `body` are set), only the last line (`body`) is displayed.
+
+Also, custom icons aren't shown either. The icon on the notification bar is always Firefox icon.
+
+
+![screenshot](https://lh5.googleusercontent.com/-E0MaU8tqIao/UxzbY_OMXeI/AAAAAAAAKJk/zZL1OVpdvPQ/w408-h725-no/14+-+1)
