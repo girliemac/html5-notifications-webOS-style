@@ -34,9 +34,9 @@ For detailed changelog, check [Releases](https://github.com/girliemac/html5-noti
 
 Notifications appear in the native notification bar, one at a time, instead of popup windows from browser. 
 
-The problem is that if a notificatin contains more than one lines one messages (when both `title` and `body` are set), only the last line (`body`) is displayed.
+The problem is that if a notificatin contains more than one lines one messages (when both `title` and `body` are set), only the last line (`body`) is displayed, instead of the main title. (When the notification bar is expanded by a user, both subject and body text are visible).
 
-Also, custom icons aren't shown either. The icon on the notification bar is always Firefox icon.
+Also, custom icons aren't shown either. The icon on the notification is always Firefox icon.
 
 
 ![screenshot](https://lh5.googleusercontent.com/-E0MaU8tqIao/UxzbY_OMXeI/AAAAAAAAKJk/zZL1OVpdvPQ/w408-h725-no/14+-+1)
